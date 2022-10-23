@@ -10,7 +10,7 @@ import Skills from "../components/Skills/Skills";
 
 const Home: NextPage = () => {
     return (
-        <div id="home-screen">
+        <div className=" bg-[rgb(36,36,36)] text-white h-screen snap-y snap-mandatory overflow-scroll overflow-x-hidden z-0">
             <Head>
                 <title>NTHau Portfolio</title>
                 <meta
@@ -21,21 +21,32 @@ const Home: NextPage = () => {
             </Head>
 
             <Header />
-            <section id="hero-section">
+            <section id="hero-section" className="snap-center">
                 <Hero />
             </section>
-            {/* 
-            <About />
 
-            <Experience />
+            <section id="about-section" className="snap-center">
+                <About />
+            </section>
 
-            <Skills />
+            <section id="experience-section" className="snap-center">
+                <Experience />
+            </section>
 
-            <Projects />
+            <section id="skills-section" className="snap-center">
+                <Skills />
+            </section>
 
-            <Contact /> */}
+            <section id="projects-section" className="snap-center">
+                <Projects />
+            </section>
+
+            <section id="contact-section" className="snap-center">
+                <Contact />
+            </section>
         </div>
     );
 };
 
 export default Home;
+
