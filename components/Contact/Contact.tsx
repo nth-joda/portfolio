@@ -40,15 +40,14 @@ function Contact() {
             className="h-screen flex relative overflow-hidden flex-col text-left md:flex-row max-w-full px-10 justify-evenly mx-auto items-center"
         >
             <h3 className="sectionTitle">{sectionTitle}</h3>
+            <h3 className="absolute top-36 uppercase tracking-[3px] text-gray-500 text-sm">
+                I have got just what you need.{" "}
+                <span className="decoration-[#F7AB0A]/50 underline">
+                    Lets talk
+                </span>
+            </h3>
 
-            <div className="flex flex-col space-y-10">
-                <h4 className="text-4xl font-semibold text-center">
-                    I have got just what you need.{" "}
-                    <span className="decoration-[#F7AB0A]/50 underline">
-                        Lets talk
-                    </span>
-                </h4>
-
+            <div className="absolute top-48 flex flex-col space-y-6">
                 <div className="space-y-5">
                     <div className="flex items-center space-x-5 justify-center">
                         <PhoneIcon className="text-[#F7AB0A] h-7 w-7 animate-pulse" />
@@ -107,10 +106,10 @@ function Contact() {
                     </button>
                 </form>
                 <Link href="#hero-section">
-                    <footer className="sticky bottom-5 w-full cursor-pointer">
+                    <footer className="sticky bottom-5 h-10 w-full cursor-pointer">
                         <div className="flex items-center justify-center">
                             <img
-                                className="h-10 w-10 rounded-full filter grayscale hover:grayscale-0 transition duration-2000"
+                                className="h-14 w-14 rounded-full filter grayscale hover:grayscale-0 transition duration-2000"
                                 src="https://booksrun.com/img/tom_no_stress.svg"
                             />
                         </div>
