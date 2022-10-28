@@ -39,7 +39,7 @@ function Contact() {
             className="h-screen flex relative overflow-hidden flex-col text-left md:flex-row max-w-full px-10 justify-evenly mx-auto items-center"
         >
             <h3 className="sectionTitle">{sectionTitle}</h3>
-            <h3 className="absolute top-36 uppercase tracking-[3px] text-gray-500 text-sm">
+            <h3 className="absolute text-center px-4 top-36 uppercase tracking-[3px] text-gray-500 text-sm">
                 I have got just what you need.{" "}
                 <span className="decoration-[#F7AB0A]/50 underline">
                     Lets talk
@@ -49,27 +49,27 @@ function Contact() {
             <div className="absolute top-48 flex flex-col space-y-6">
                 <div className="space-y-5">
                     <div className="flex items-center space-x-5 justify-center">
-                        <PhoneIcon className="text-[#F7AB0A] h-7 w-7 animate-pulse" />
-                        <p className="text-2xl">{phoneNumber}</p>
+                        <PhoneIcon className="text-[#F7AB0A] h-5 w-5 md:h-7 md:w-7 animate-pulse" />
+                        <p className="text-xl md:text-2xl">{phoneNumber}</p>
                     </div>
 
                     <div className="flex items-center space-x-5 justify-center">
-                        <EnvelopeIcon className="text-[#F7AB0A] h-7 w-7 animate-pulse" />
-                        <p className="text-2xl">{email}</p>
+                        <EnvelopeIcon className="text-[#F7AB0A] h-5 w-5 md:h-7 md:w-7  animate-pulse" />
+                        <p className="text-xl md:text-2xl">{email}</p>
                     </div>
 
                     <div className="flex items-center space-x-5 justify-center">
-                        <MapPinIcon className="text-[#F7AB0A] h-7 w-7 animate-pulse" />
-                        <p className="text-2xl">{address}</p>
+                        <MapPinIcon className="text-[#F7AB0A] h-5 w-5 md:h-7 md:w-7  animate-pulse" />
+                        <p className="text-xl md:text-2xl">{address}</p>
                     </div>
                 </div>
 
                 {/* FORM */}
                 <form
                     onSubmit={handleSubmit(onSubmit)}
-                    className="flex flex-col space-y-2 w-fit mx-auto"
+                    className="flex flex-col space-y-2 w-fit md:mx-auto mx-4"
                 >
-                    <div className="flex space-x-2">
+                    <div className="md:flex md:space-x-2 md:space-y-0 space-y-2">
                         <input
                             {...register("name")}
                             placeholder="Name"

@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Project } from "../../typings";
 import { urlFor } from "../../sanity";
+import { Tooltip } from "@mui/material";
 type Props = { projects: Project[] };
 
 export default function Projects({ projects }: Props) {
@@ -22,7 +23,7 @@ export default function Projects({ projects }: Props) {
                     return (
                         <div
                             key={index}
-                            className="w-screen flex-shink-0 snap-center flex flex-col space-y-1 items-center justify-center p-20 md:p-44 h-screen"
+                            className="w-screen mt-10 flex-shink-0 snap-center flex flex-col space-y-1 items-center justify-center  md:p-44 h-screen"
                         >
                             <motion.img
                                 initial={{ y: -300, opacity: 0 }}
@@ -30,24 +31,28 @@ export default function Projects({ projects }: Props) {
                                 whileInView={{ y: 0, opacity: 1 }}
                                 viewport={{ once: true }}
                                 src={urlFor(project.image).url()}
-                                className="w-44 h-44 object-cover rounded-2xl"
+                                className="w-28 h-28 md:w-44 md:h-44 object-cover rounded-2xl"
                                 alt=""
                             />
-                            <div className="space-y-10 px-0 md:px-10 max-w-6xl">
+                            <div className="space-y-8 md:space-y-10 px-0 md:px-10 max-w-6xl">
                                 <h4 className="underline decoration-[#F7AB0A]/50 text-xl font-semibold text-center">
                                     {project.title}
                                 </h4>
                                 <div className="flex items-center space-x-2 justify-center">
                                     {project?.technologies.map((tech) => (
-                                        <img
-                                            data-tooltip-target="tooltip-default"
+                                        <Tooltip
                                             key={tech._id}
-                                            src={urlFor(tech.image).url()}
-                                            className="h-10 w-10"
-                                        />
+                                            title={tech.title}
+                                            arrow
+                                        >
+                                            <img
+                                                src={urlFor(tech.image).url()}
+                                                className="h-10 w-10"
+                                            />
+                                        </Tooltip>
                                     ))}
                                 </div>
-                                <p className="text-lg text-center md:text-left">
+                                <p className="text-lg md:text-left max-h-44 overflow-y-auto">
                                     {project.summary}
                                 </p>
                             </div>
