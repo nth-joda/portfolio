@@ -1,8 +1,11 @@
 import React from "react";
 import { motion } from "framer-motion";
-export default function Projects() {
+import { Project } from "../../typings";
+import { urlFor } from "../../sanity";
+type Props = { projects: Project[] };
+
+export default function Projects({ projects }: Props) {
     const sectionTitle: string = "Projects";
-    const projects = [1, 2, 3, 4];
     return (
         <motion.div
             initial={{ opacity: 0 }}
@@ -26,15 +29,26 @@ export default function Projects() {
                                 transition={{ duration: 1.2 }}
                                 whileInView={{ y: 0, opacity: 1 }}
                                 viewport={{ once: true }}
-                                src="https://picsum.photos/id/684/600/400"
+                                src={urlFor(project.image).url()}
+                                className="w-44 h-44 object-cover rounded-2xl"
                                 alt=""
                             />
                             <div className="space-y-10 px-0 md:px-10 max-w-6xl">
                                 <h4 className="underline decoration-[#F7AB0A]/50 text-xl font-semibold text-center">
-                                    Project name
+                                    {project.title}
                                 </h4>
+                                <div className="flex items-center space-x-2 justify-center">
+                                    {project?.technologies.map((tech) => (
+                                        <img
+                                            data-tooltip-target="tooltip-default"
+                                            key={tech._id}
+                                            src={urlFor(tech.image).url()}
+                                            className="h-10 w-10"
+                                        />
+                                    ))}
+                                </div>
                                 <p className="text-lg text-center md:text-left">
-                                    Ad cupidatat irure sunt et non in do eu et
+                                    {project.summary}
                                 </p>
                             </div>
                         </div>

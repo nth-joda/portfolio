@@ -13,6 +13,7 @@ import { fetchSkills } from "../utils/fetchSkills";
 import { fetchPageInfo } from "../utils/fetchPageInfo";
 import { fetchProjects } from "../utils/fetchProjects";
 import { fetchSocials } from "../utils/fetchSocials";
+import Link from "next/link";
 
 type Props = {
     pageInfo: PageInfo;
@@ -52,12 +53,22 @@ const Home = ({ pageInfo, experiences, skills, socials, projects }: Props) => {
             </section>
 
             <section id="projects-section" className="snap-start">
-                <Projects />
+                <Projects projects={projects} />
             </section>
 
             <section id="contact-section" className="snap-start">
                 <Contact />
             </section>
+            <Link href="#hero-section">
+                <footer className="sticky bottom-5 h-10 w-full cursor-pointer">
+                    <div className="flex items-center justify-center">
+                        <img
+                            className="h-14 w-14 rounded-full filter grayscale hover:grayscale-0 transition duration-2000"
+                            src="https://booksrun.com/img/tom_no_stress.svg"
+                        />
+                    </div>
+                </footer>
+            </Link>
         </div>
     );
 };

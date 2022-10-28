@@ -7,7 +7,6 @@ import {
 } from "@heroicons/react/24/solid";
 import { motion } from "framer-motion";
 import { useForm, SubmitHandler } from "react-hook-form";
-import Link from "next/link";
 
 /* --------------------------- Body value Declaration of Form --------------------------- */
 type Inputs = {
@@ -105,16 +104,6 @@ function Contact() {
                         <PaperAirplaneIcon className="text-black h-5 w-5" />
                     </button>
                 </form>
-                <Link href="#hero-section">
-                    <footer className="sticky bottom-5 h-10 w-full cursor-pointer">
-                        <div className="flex items-center justify-center">
-                            <img
-                                className="h-14 w-14 rounded-full filter grayscale hover:grayscale-0 transition duration-2000"
-                                src="https://booksrun.com/img/tom_no_stress.svg"
-                            />
-                        </div>
-                    </footer>
-                </Link>
             </div>
         </motion.div>
     );
