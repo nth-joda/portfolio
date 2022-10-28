@@ -1,7 +1,11 @@
 import React from "react";
 import { motion } from "framer-motion";
-import Skill from "./Skill";
-export default function Skills() {
+import SkillComponent from "./Skill";
+import { Skill } from "../../typings";
+type Props = {
+    skills: Skill[];
+};
+export default function Skills({ skills }: Props) {
     const sectionTitle: string = "Skills";
     return (
         <motion.div
@@ -17,18 +21,15 @@ export default function Skills() {
                 Hover over a skill for currency profieciency
             </h3>
             <div className="absolute top-48 grid grid-cols-4 gap-5">
-                <Skill />
-                <Skill />
-                <Skill />
-                <Skill />
-                <Skill />
-                <Skill />
-                <Skill />
-                <Skill />
-                <Skill />
-                <Skill />
-                <Skill />
-                <Skill />
+                {skills.map((skill, index) => (
+                    <SkillComponent
+                        key={skill._id}
+                        skill={skill}
+                        directionLeft={
+                            Math.floor(index % 4) % 2 === 0 ? true : false
+                        }
+                    />
+                ))}
             </div>
         </motion.div>
     );

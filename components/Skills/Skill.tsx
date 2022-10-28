@@ -1,26 +1,23 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Skill } from "../../typings";
+import { urlFor } from "../../sanity";
 type Props = {
     directionLeft?: boolean;
-    logo: string;
-    title: string;
+    skill: Skill;
 };
 
-const Skill = ({ directionLeft, logo, title }: Props) => {
+const Skill = ({ directionLeft, skill }: Props) => {
     return (
         <div className="group relative flex cursor-pointer">
             <motion.img
                 initial={{
-                    x: directionLeft ? -200 : 200,
+                    x: directionLeft ? -100 : 100,
                 }}
                 transition={{ duration: 1 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                src={
-                    logo
-                        ? logo
-                        : "https://e7.pngegg.com/pngimages/882/236/png-clipart-computer-icons-skill-skills-icon-angle-photography.png"
-                }
-                className="rounded-full border border-gray-500 object-cover w-20 h-20 xl:w-24 xl:h-24 filter group-hover:grayscale transition duration-300 ease-in-out"
+                src={urlFor(skill.image).url()}
+                className="bg-white rounded-full border border-gray-500 object-cover w-20 h-20 xl:w-24 xl:h-24 filter group-hover:grayscale transition duration-300 ease-in-out"
             />
         </div>
     );
