@@ -28,6 +28,7 @@ export default function Header({ socials }: Props) {
                                 url={social.url}
                                 fgColor="gray"
                                 bgColor="transparent"
+                                target="_blank"
                             />
                         </Tooltip>
                     );
@@ -42,10 +43,17 @@ export default function Header({ socials }: Props) {
                 }}
                 className="flex flex-row items-center text-gray-300 cursor-pointer space-x-6"
             >
-                <button className="bg-[#F7AB0A] border border-[#F7AB0A] py-2 px-7 rounded-md text-black font-bold text-lg flex items-center space-x-2 justify-center hover:bg-transparent hover:text-[#F7AB0A] transition duration-1000">
-                    <ArrowDownTrayIcon className="h-5 w-5" />
-                    <p>CV </p>
-                </button>
+                <Tooltip title="download my cv" arrow>
+                    <a
+                        href="../../assets/JavaDeveloper_NguyenTrungHau_2000.pdf"
+                        download
+                        className="bg-[#F7AB0A] border border-[#F7AB0A] py-1 px-5 rounded-md text-black font-bold text-lg flex items-center space-x-2 justify-center hover:bg-transparent hover:text-[#F7AB0A] transition duration-1000"
+                    >
+                        <ArrowDownTrayIcon className="h-5 w-5" />
+                        <p>CV </p>
+                    </a>
+                </Tooltip>
+
                 <Link href="#contact-section">
                     <div>
                         <SocialIcon
