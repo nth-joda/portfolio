@@ -1,10 +1,9 @@
-import React from "react";
-import { SocialIcon } from "react-social-icons";
-import { motion } from "framer-motion";
-import { Social } from "../../typings";
 import { ArrowDownTrayIcon } from "@heroicons/react/24/solid";
-import Link from "next/link";
 import { Tooltip } from "@mui/material";
+import { motion } from "framer-motion";
+import Link from "next/link";
+import { SocialIcon } from "react-social-icons";
+import { Social } from "../../typings";
 type Props = {
     socials: Social[];
 };

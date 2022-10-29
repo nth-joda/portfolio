@@ -1,12 +1,11 @@
-import React from "react";
 import {
     EnvelopeIcon,
     MapPinIcon,
-    PhoneIcon,
     PaperAirplaneIcon,
+    PhoneIcon,
 } from "@heroicons/react/24/solid";
 import { motion } from "framer-motion";
-import { useForm, SubmitHandler } from "react-hook-form";
+import { SubmitHandler, useForm } from "react-hook-form";
 
 /* --------------------------- Body value Declaration of Form --------------------------- */
 type Inputs = {
